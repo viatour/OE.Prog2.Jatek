@@ -66,11 +66,43 @@ namespace OE.Prog2.Jatek.Jatekter
 
         public JatekElem[] MegadottHelyenLevok(int x, int y, int tav)
         {
+            JatekElem[] kozeliElemek;
+            List<JatekElem> atmeneti = new List<JatekElem>();
+            int darab = 0;
 
+            int x_Balra = x - tav;
+            int x_Jobbra = x + tav;
+            int y_Fent = y - tav;
+            int y_Lent = y + tav;
+            //Határok ellenőrzése
+            if (x_Balra < 0) x_Balra = 0;
+            if (y_Fent < 0) y_Fent = 0;
+            if (x_Jobbra > meretX) x_Jobbra = meretX;
+            if (y_Lent > meretY) y_Lent = meretY;
+
+            for (int i = 0; i < elemek.Length; i++)
+            {
+                //Távolságon belül
+                //Külön jelölni a törölt elemeket, nem nullal (elemek[i].Torolt == false)
+                if ((elemek[i] != null) && (elemek[i].X >= x_Balra && elemek[i].X <= x_Jobbra && elemek[i].Y >= y_Fent && elemek[i].Y <= y_Lent))
+                {
+                    atmeneti.Add(elemek[i]);
+                    darab++;
+                }
+            }
+            if (x_Balra >= 0 && x_Jobbra <= meretX && y_Fent >= 0 && y_Lent <= meretY)
+            {
+                
+            }
+            kozeliElemek = new JatekElem[darab];
+            kozeliElemek = atmeneti.ToArray();
+            return kozeliElemek;
+
+            
         }
         public JatekElem[] MegadottHelyenLevok(int x, int y)
         {
-            MegadottHelyenLevok(x, y, 0);
+            return MegadottHelyenLevok(x, y, 0);
         }
 
         #endregion
