@@ -58,10 +58,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fal.cs" />
     <Compile Include="JatekElem.cs" />
+    <Compile Include="Jatekos.cs" />
     <Compile Include="JatekTer.cs" />
+    <Compile Include="Keret.cs" />
+    <Compile Include="Kincs.cs" />
+    <Compile Include="MozgoJatekElem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RogzitettJatekElem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

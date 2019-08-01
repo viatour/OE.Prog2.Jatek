@@ -10,6 +10,7 @@ namespace OE.Prog2.Jatek.Jatekter
     {
         static void Main(string[] args)
         {
+            /*
             //Teszt
             JatekTer tesztTer = new JatekTer(500, 500);
 
@@ -28,6 +29,7 @@ namespace OE.Prog2.Jatek.Jatekter
                 Console.WriteLine("{0}.Elem || X: {1}, Y: {2}", i ,item.X, item.Y);
                 i++;
             }
+            */
 
 
 

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace OE.Prog2.Jatek.Jatekter
 {
-    class JatekElem
+    abstract class JatekElem
     {
         #region Mezők
         private int x;
         private int y;
-        private JatekTer ter;
+        protected JatekTer ter;
         #endregion
 
         #region Konstruktor
@@ -26,28 +26,24 @@ namespace OE.Prog2.Jatek.Jatekter
         #region Tulajdonságok
         public int X
         {
-            get
-            {
-                return x;
-            }
-            set
-            {
-                x = value;
-            }
+            get { return x; }
+            set { x = value; }
         }
 
         public int Y
         {
-            get
-            {
-                return y;
-            }
-            set
-            {
-                y = value;
-            }
+            get { return y; }
+            set { y = value; }
+        }
+
+        public abstract double Meret
+        {
+            get;
         }
         #endregion
 
+        #region Metódusok
+        public abstract void Utkozes(JatekElem elem);
+        #endregion
     }
 }

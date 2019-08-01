@@ -27,18 +27,12 @@ namespace OE.Prog2.Jatek.Jatekter
         #region Tulajdonságok
         public int MeretX
         {
-            get
-            {
-                return meretX;
-            }
+            get { return meretX; }
         }
 
         public int MeretY
         {
-            get
-            {
-                return meretY;
-            }
+            get { return meretY; }
         }
         #endregion
 
