@@ -9,7 +9,7 @@ namespace OE.Prog2.Jatek.Jatekter
     abstract class MozgoJatekElem : JatekElem
     {
         #region Mezők
-        private bool aktiv;
+        private bool aktiv = true;
         #endregion
 
         #region Konstruktor
@@ -30,16 +30,35 @@ namespace OE.Prog2.Jatek.Jatekter
         #region Metódusok
         public void AtHelyez(int ujx, int ujy)
         {
+            List<JatekElem> atmeneti = new List<JatekElem>();
             JatekElem[] elemek = ter.MegadottHelyenLevok(ujx, ujy);
             foreach (JatekElem elem in elemek)
             {
-                elem.Utkozes(this);
-                this.Utkozes(elem);
-                if (!aktiv)
+                if (elem != null)
                 {
-                    break;
+                    Console.WriteLine("Nem null");
+                }
+                else
+                {
+                    Console.WriteLine("Null");
                 }
             }
+
+
+            if (ter.MegadottHelyenLevok(ujx, ujy) != null)
+            {
+                elemek = ter.MegadottHelyenLevok(ujx, ujy);
+                foreach (JatekElem elem in elemek)
+                {
+                    elem.Utkozes(this);
+                    this.Utkozes(elem);
+                    if (!aktiv)
+                    {
+                        break;
+                    }
+                }
+            }
+
             if (aktiv)
             {
                 elemek = ter.MegadottHelyenLevok(ujx, ujy);

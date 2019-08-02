@@ -12,6 +12,8 @@ namespace OE.Prog2.Jatek.Szabalyok
         #region Konstruktor
         public Kincs(int x, int y, JatekTer ter) : base(x, y, ter)
         {
+            //Tesztkeret
+            Console.WriteLine("Kincs helye: x: {0} y: {1}", x, y);
         }
         #endregion
 
@@ -28,6 +30,7 @@ namespace OE.Prog2.Jatek.Szabalyok
             if (elem is Jatekos)
             {
                 (elem as Jatekos).PontotSzerez(50);
+                Console.WriteLine((elem as Jatekos).Nev);
                 this.ter.Torles(this);
             }
         }

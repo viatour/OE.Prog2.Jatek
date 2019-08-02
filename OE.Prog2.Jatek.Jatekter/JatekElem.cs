@@ -20,6 +20,7 @@ namespace OE.Prog2.Jatek.Jatekter
             this.x = x;
             this.y = y;
             ter.Felvetel(this);
+            this.ter = ter;
         }
         #endregion
 
@@ -44,6 +45,13 @@ namespace OE.Prog2.Jatek.Jatekter
 
         #region Metódusok
         public abstract void Utkozes(JatekElem elem);
+        //TIPUS
+        public override string ToString()
+        {
+            string stuff = GetType().ToString();
+            stuff = stuff.Split('.')[4];
+            return stuff;
+        }
         #endregion
     }
 }

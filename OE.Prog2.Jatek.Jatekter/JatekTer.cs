@@ -84,10 +84,6 @@ namespace OE.Prog2.Jatek.Jatekter
                     darab++;
                 }
             }
-            if (x_Balra >= 0 && x_Jobbra <= meretX && y_Fent >= 0 && y_Lent <= meretY)
-            {
-                
-            }
             kozeliElemek = new JatekElem[darab];
             kozeliElemek = atmeneti.ToArray();
             return kozeliElemek;

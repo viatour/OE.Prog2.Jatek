@@ -11,6 +11,7 @@ namespace OE.Prog2.Jatek.Jatekter
         #region Konstruktor
         public RogzitettJatekElem(int x, int y, JatekTer ter) : base(x, y, ter)
         {
+
         }
         #endregion
     }

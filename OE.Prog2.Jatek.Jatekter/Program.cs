@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OE.Prog2.Jatek.Keret;
+using OE.Prog2.Jatek.Szabalyok;
 
 namespace OE.Prog2.Jatek.Jatekter
 {
@@ -30,8 +32,10 @@ namespace OE.Prog2.Jatek.Jatekter
                 i++;
             }
             */
-
-
+            
+            Keret.Keret teszt = new Keret.Keret();
+            teszt.Futtatas();
+            
 
 
             Console.ReadKey();
