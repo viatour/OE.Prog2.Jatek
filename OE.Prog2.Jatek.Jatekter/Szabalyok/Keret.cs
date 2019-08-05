@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OE.Prog2.Jatek.Jatekter;
 using OE.Prog2.Jatek.Szabalyok;
+using OE.Prog2.Jatek.Megjelenites;
 
 namespace OE.Prog2.Jatek.Keret
 {
@@ -52,12 +53,12 @@ namespace OE.Prog2.Jatek.Keret
             int x = 0;
             int y = 0;
             //TESZT KINCS
-            new Kincs(1, 2, valosTer);
+            /*new Kincs(1, 2, valosTer);
             JatekElem[] teszt = valosTer.MegadottHelyenLevok(1, 2);
             foreach (JatekElem elem in teszt)
             {
                 Console.WriteLine("TESZT: X:{0} Y:{1} típusa: {2}", elem.X, elem.Y, elem);
-            }
+            }*/
 
             for (int i = 1; i < KINCSEK_SZAMA; i++)
             {
@@ -77,7 +78,9 @@ namespace OE.Prog2.Jatek.Keret
         }
         public void Futtatas()
         {
+            KonzolosMegjelenito gui = new KonzolosMegjelenito(valosTer, 0, 0);
             Jatekos bela = new Jatekos("Béla", 1, 1, valosTer);
+            KonzolosMegjelenito gui2 = new KonzolosMegjelenito(bela, 25, 0);
             //Vezérlés
             do
             {
@@ -103,6 +106,8 @@ namespace OE.Prog2.Jatek.Keret
                         Console.WriteLine("Rossz billentyű!");
                         break;
                 }
+                gui.Megjelenites();
+                gui2.Megjelenites();
 
             } while (!jatekVege);
         }

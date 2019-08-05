@@ -31,14 +31,11 @@ namespace OE.Prog2.Jatek.Jatekter
         public void AtHelyez(int ujx, int ujy)
         {
 
-            
-            
             JatekElem[] adottHelyenLevok = ter.MegadottHelyenLevok(ujx, ujy);
             foreach (JatekElem elem in adottHelyenLevok)
             {
                 this.Utkozes(elem);
                 elem.Utkozes(this);
-                Console.WriteLine("{0}", elem);
                 if (!this.aktiv)
                 {
                     break;

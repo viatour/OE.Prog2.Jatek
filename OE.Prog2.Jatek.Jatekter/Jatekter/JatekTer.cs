@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OE.Prog2.Jatek.Megjelenites;
 
 namespace OE.Prog2.Jatek.Jatekter
 {
-    class JatekTer
+    class JatekTer : IMegjelenitheto
     {
         #region Mezők
         private const int MAX_ELEMSZAM = 1000;
@@ -33,6 +34,15 @@ namespace OE.Prog2.Jatek.Jatekter
         public int MeretY
         {
             get { return meretY; }
+        }
+
+        public int[] MegjelenitendoMeret
+        {
+            get
+            {
+                int[] meretek = { meretX, MeretY };
+                return meretek;
+            }
         }
         #endregion
 
@@ -93,6 +103,17 @@ namespace OE.Prog2.Jatek.Jatekter
         public JatekElem[] MegadottHelyenLevok(int x, int y)
         {
             return MegadottHelyenLevok(x, y, 0);
+        }
+
+        public IKirajzolhato[] MegjelenitendoElemek()
+        {
+            List<IKirajzolhato> atmeneti = new List<IKirajzolhato>();
+            foreach (JatekElem elem in elemek)
+            {
+                if (elem is IKirajzolhato) atmeneti.Add(elem as IKirajzolhato);
+            }
+            IKirajzolhato[] vissza = atmeneti.ToArray();
+            return vissza;
         }
 
         #endregion

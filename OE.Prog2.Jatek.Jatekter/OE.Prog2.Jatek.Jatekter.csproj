@@ -58,16 +58,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fal.cs" />
-    <Compile Include="JatekElem.cs" />
-    <Compile Include="Jatekos.cs" />
-    <Compile Include="JatekTer.cs" />
-    <Compile Include="Keret.cs" />
-    <Compile Include="Kincs.cs" />
-    <Compile Include="MozgoJatekElem.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Szabalyok\Fal.cs" />
+    <Compile Include="Megjelenites\IKirajzolhato.cs" />
+    <Compile Include="Megjelenites\IMegjelenitheto.cs" />
+    <Compile Include="Jatekter\JatekElem.cs" />
+    <Compile Include="Szabalyok\Jatekos.cs" />
+    <Compile Include="Jatekter\JatekTer.cs" />
+    <Compile Include="Szabalyok\Keret.cs" />
+    <Compile Include="Jatekter\Kincs.cs" />
+    <Compile Include="Jatekter\KonzolosMegjelenito.cs" />
+    <Compile Include="Jatekter\MozgoJatekElem.cs" />
+    <Compile Include="Jatekter\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RogzitettJatekElem.cs" />
+    <Compile Include="Jatekter\RogzitettJatekElem.cs" />
+    <Compile Include="Jatekter\SzalbiztosKonzol.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -84,5 +88,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

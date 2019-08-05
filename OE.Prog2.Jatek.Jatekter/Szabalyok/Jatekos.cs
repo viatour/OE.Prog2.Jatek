@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OE.Prog2.Jatek.Jatekter;
+using OE.Prog2.Jatek.Megjelenites;
 
 namespace OE.Prog2.Jatek.Szabalyok
 {
-    class Jatekos : MozgoJatekElem
+    class Jatekos : MozgoJatekElem, IKirajzolhato, IMegjelenitheto
     {
         #region Mezők
         private string nev;
@@ -34,6 +35,26 @@ namespace OE.Prog2.Jatek.Szabalyok
         {
             get { return 0.2; }
         }
+
+        public char Alak
+        {
+            get
+            {
+                if (Aktiv) return '\u263A';
+                else return '\u263B';
+            }
+        }
+
+        public int[] MegjelenitendoMeret
+        {
+            get
+            {
+                int[] vissza = { ter.MeretX, ter.MeretY };
+                return vissza;
+            }
+        }
+
+
         #endregion
 
         #region Metódusok
@@ -59,14 +80,26 @@ namespace OE.Prog2.Jatek.Szabalyok
 
         public void Megy(int rx, int ry)
         {
-            //this.AtHelyez(this.X += rx, this.Y += ry);
             int ujx = X + rx;
             int ujy = Y + ry;
             this.AtHelyez(ujx, ujy);
-            Console.WriteLine("Jelenlegi pozició: x:{0} y:{1}",X,Y);
+            //Console.WriteLine("Jelenlegi pozició: x:{0} y:{1}",X,Y);
         }
 
-        
+        public IKirajzolhato[] MegjelenitendoElemek()
+        {
+            JatekElem[] kornyekenElemek = ter.MegadottHelyenLevok(X, Y, 5);
+            List<IKirajzolhato> atmeneti = new List<IKirajzolhato>();
+            foreach (JatekElem elem in kornyekenElemek)
+            {
+                if (elem is IKirajzolhato) atmeneti.Add(elem as IKirajzolhato);
+            }
+            IKirajzolhato[] vissza = atmeneti.ToArray();
+            return vissza;
+
+        }
+
+
         #endregion
     }
 }
