@@ -59,7 +59,10 @@ namespace OE.Prog2.Jatek.Szabalyok
 
         public void Megy(int rx, int ry)
         {
-            this.AtHelyez(this.X += rx, this.Y += ry);
+            //this.AtHelyez(this.X += rx, this.Y += ry);
+            int ujx = X + rx;
+            int ujy = Y + ry;
+            this.AtHelyez(ujx, ujy);
             Console.WriteLine("Jelenlegi pozició: x:{0} y:{1}",X,Y);
         }
 

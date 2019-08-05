@@ -30,52 +30,35 @@ namespace OE.Prog2.Jatek.Jatekter
         #region Metódusok
         public void AtHelyez(int ujx, int ujy)
         {
-            List<JatekElem> atmeneti = new List<JatekElem>();
-            JatekElem[] elemek = ter.MegadottHelyenLevok(ujx, ujy);
-            foreach (JatekElem elem in elemek)
+
+            
+            
+            JatekElem[] adottHelyenLevok = ter.MegadottHelyenLevok(ujx, ujy);
+            foreach (JatekElem elem in adottHelyenLevok)
             {
-                if (elem != null)
+                this.Utkozes(elem);
+                elem.Utkozes(this);
+                Console.WriteLine("{0}", elem);
+                if (!this.aktiv)
                 {
-                    Console.WriteLine("Nem null");
-                }
-                else
-                {
-                    Console.WriteLine("Null");
+                    break;
                 }
             }
-
-
-            if (ter.MegadottHelyenLevok(ujx, ujy) != null)
-            {
-                elemek = ter.MegadottHelyenLevok(ujx, ujy);
-                foreach (JatekElem elem in elemek)
-                {
-                    elem.Utkozes(this);
-                    this.Utkozes(elem);
-                    if (!aktiv)
-                    {
-                        break;
-                    }
-                }
-            }
-
+            double osszmeret = 0;
             if (aktiv)
             {
-                elemek = ter.MegadottHelyenLevok(ujx, ujy);
-                double osszmeret = 0;
-                for (int i = 0; i < elemek.Length; i++)
+                JatekElem[] adottHelyenLevok2 = ter.MegadottHelyenLevok(ujx, ujy);
+                foreach (JatekElem elem in adottHelyenLevok2)
                 {
-                    osszmeret = elemek[i].Meret;
+                    osszmeret += elem.Meret;
                 }
-                if (osszmeret + Meret <= 1)
-                {
-                    X = ujx;
-                    Y = ujy;
-                }
-
             }
-
-
+            if (osszmeret + this.Meret <= 1)
+            {
+                this.X = ujx;
+                this.Y = ujy;
+            }
+            
         }
         #endregion
     }

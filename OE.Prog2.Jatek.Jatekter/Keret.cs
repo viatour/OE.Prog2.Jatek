@@ -71,7 +71,7 @@ namespace OE.Prog2.Jatek.Keret
                 }
                 if (osszMeret == 0)
                 {
-                    valosTer.Felvetel(new Kincs(x, y, valosTer));
+                    new Kincs(x, y, valosTer);
                 }
             }
         }

@@ -30,7 +30,7 @@ namespace OE.Prog2.Jatek.Szabalyok
             if (elem is Jatekos)
             {
                 (elem as Jatekos).PontotSzerez(50);
-                Console.WriteLine((elem as Jatekos).Nev);
+                Console.WriteLine("{0} pontot szerzett!",(elem as Jatekos).Nev);
                 this.ter.Torles(this);
             }
         }
