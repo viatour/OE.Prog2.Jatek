@@ -65,8 +65,8 @@
     <Compile Include="Szabalyok\Jatekos.cs" />
     <Compile Include="Jatekter\JatekTer.cs" />
     <Compile Include="Szabalyok\Keret.cs" />
-    <Compile Include="Jatekter\Kincs.cs" />
-    <Compile Include="Jatekter\KonzolosMegjelenito.cs" />
+    <Compile Include="Szabalyok\Kincs.cs" />
+    <Compile Include="Megjelenites\KonzolosMegjelenito.cs" />
     <Compile Include="Jatekter\MozgoJatekElem.cs" />
     <Compile Include="Jatekter\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

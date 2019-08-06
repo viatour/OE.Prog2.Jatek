@@ -35,19 +35,14 @@ namespace OE.Prog2.Jatek.Keret
             for (int i = 0; i < PALYA_MERET_X; i++)
             {
                 new Fal(i, 0, valosTer);
+                new Fal(i, PALYA_MERET_Y - 1, valosTer);
             }
-            for (int i = 0; i < PALYA_MERET_X; i++)
+            for (int j = 1; j < PALYA_MERET_Y-1; j++)
             {
-                new Fal(i, PALYA_MERET_Y, valosTer);
+                new Fal(0, j, valosTer);
+                new Fal(PALYA_MERET_X-1, j, valosTer);
             }
-            for (int i = 0; i < PALYA_MERET_Y; i++)
-            {
-                new Fal(0, i, valosTer);
-            }
-            for (int i = 0; i < PALYA_MERET_Y; i++)
-            {
-                new Fal(PALYA_MERET_X, i, valosTer);
-            }
+
 
             Random r = new Random();
             int x = 0;
@@ -59,11 +54,11 @@ namespace OE.Prog2.Jatek.Keret
             {
                 Console.WriteLine("TESZT: X:{0} Y:{1} típusa: {2}", elem.X, elem.Y, elem);
             }*/
-
-            for (int i = 1; i < KINCSEK_SZAMA; i++)
+            //Nem fixen 10et generál
+            for (int i = 0; i < KINCSEK_SZAMA; i++)
             {
-                x = r.Next(2, PALYA_MERET_X + 1);
-                y = r.Next(2, PALYA_MERET_Y + 1);
+                x = r.Next(1, PALYA_MERET_X-2);
+                y = r.Next(1, PALYA_MERET_Y-2);
                 JatekElem[] elemek = valosTer.MegadottHelyenLevok(x, y);
                 double osszMeret = 0;
                 foreach (JatekElem elem in elemek)
@@ -106,7 +101,7 @@ namespace OE.Prog2.Jatek.Keret
                         Console.WriteLine("Rossz billentyű!");
                         break;
                 }
-                gui.Megjelenites();
+                //gui.Megjelenites();
                 gui2.Megjelenites();
 
             } while (!jatekVege);

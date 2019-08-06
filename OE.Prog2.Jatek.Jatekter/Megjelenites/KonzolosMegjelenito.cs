@@ -28,48 +28,28 @@ namespace OE.Prog2.Jatek.Megjelenites
         #region Metódusok
         public void Megjelenites()
         {
-            /*
             IKirajzolhato[] kirajzolandoElemek = forras.MegjelenitendoElemek();
             int x = forras.MegjelenitendoMeret[0];
             int y = forras.MegjelenitendoMeret[1];
-            int a = 0;
+     
             for (int i = 0; i < y; i++)
             {
                 for (int j = 0; j < x; j++)
                 {
-                    a = 0;
-                    if (a < kirajzolandoElemek.Length && (forras as JatekElem).X != kirajzolandoElemek[a].X  && (forras as JatekElem).Y != kirajzolandoElemek[a].Y)
+                    int a = 0;
+                    while (a < kirajzolandoElemek.Length && !(kirajzolandoElemek[a].X == j && kirajzolandoElemek[a].Y == i))
                     {
-                        SzalbiztosKonzol.KiirasXY(i, j, ' ');
                         a++;
+                    }
+                    if (a < kirajzolandoElemek.Length)
+                    {
+                        SzalbiztosKonzol.KiirasXY(j + pozX, i + pozY, kirajzolandoElemek[a].Alak);
                     }
                     else
                     {
-                        SzalbiztosKonzol.KiirasXY(i, j, kirajzolandoElemek[a].Alak);
-                        
+                        SzalbiztosKonzol.KiirasXY(j + pozX, i + pozY, '-');
                     }
-                }
-            }
-            */
-            IKirajzolhato[] kirajzolandoElemek = forras.MegjelenitendoElemek();
-            int x = forras.MegjelenitendoMeret[0];
-            int y = forras.MegjelenitendoMeret[1];
-            int a = 0;
-            for (int i = 0; i < y; i++)
-            {
-                for (int j = 0; j < x; j++)
-                {
-                    a = 0;
-                    if (a < kirajzolandoElemek.Length && kirajzolandoElemek[a].X == j && kirajzolandoElemek[a].Y == i)
-                    {
-                        SzalbiztosKonzol.KiirasXY(i, j, kirajzolandoElemek[a].Alak);
-                        a++;
-
-                    }
-                    else
-                    {
-                        SzalbiztosKonzol.KiirasXY(i, j, ' ');
-                    }
+                    
                 }
             }
         }
