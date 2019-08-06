@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OE.Prog2.Jatek.Jatekter", "OE.Prog2.Jatek.Jatekter\OE.Prog2.Jatek.Jatekter.csproj", "{8EAAF6C7-B0EE-4751-ADBD-9A40378BC056}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OE.Prog2.Jatek", "OE.Prog2.Jatek.Jatekter\OE.Prog2.Jatek.csproj", "{8EAAF6C7-B0EE-4751-ADBD-9A40378BC056}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

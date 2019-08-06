@@ -16,6 +16,8 @@ namespace OE.Prog2.Jatek.Szabalyok
         private int pontszam;
         #endregion
 
+        public event JatekosValtozasKezelo JatekosValtozas;
+
         #region Konstruktor
         public Jatekos(string nev, int x, int y, JatekTer ter) : base(x, y, ter)
         {
@@ -36,7 +38,7 @@ namespace OE.Prog2.Jatek.Szabalyok
             get { return 0.2; }
         }
 
-        public char Alak
+        virtual public char Alak
         {
             get
             {
@@ -69,6 +71,7 @@ namespace OE.Prog2.Jatek.Szabalyok
                 if ((eletero - serules) >= 0)
                 {
                     eletero -= serules;
+                    JatekosValtozas(this, pontszam, eletero);
                 }
             }
             if (eletero == 0) Aktiv = false; 

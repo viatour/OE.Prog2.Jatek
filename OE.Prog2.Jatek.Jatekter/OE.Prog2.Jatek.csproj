@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8EAAF6C7-B0EE-4751-ADBD-9A40378BC056}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>OE.Prog2.Jatek.Jatekter</RootNamespace>
-    <AssemblyName>OE.Prog2.Jatek.Jatekter</AssemblyName>
+    <RootNamespace>OE.Prog2.Jatek</RootNamespace>
+    <AssemblyName>OE.Prog2.Jatek</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -58,10 +58,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Automatizmus\IAutomatikusanMukodo.cs" />
+    <Compile Include="Automatizmus\OrajelGenerator.cs" />
     <Compile Include="Szabalyok\Fal.cs" />
     <Compile Include="Megjelenites\IKirajzolhato.cs" />
     <Compile Include="Megjelenites\IMegjelenitheto.cs" />
     <Compile Include="Jatekter\JatekElem.cs" />
+    <Compile Include="Szabalyok\GepiJatekos.cs" />
+    <Compile Include="Szabalyok\GonoszGepiJatekos.cs" />
     <Compile Include="Szabalyok\Jatekos.cs" />
     <Compile Include="Jatekter\JatekTer.cs" />
     <Compile Include="Szabalyok\Keret.cs" />

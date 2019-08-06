@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OE.Prog2.Jatek.Jatekter;
+using OE.Prog2.Jatek.Automatizmus;
 
 namespace OE.Prog2.Jatek.Megjelenites
 {
-    class KonzolosMegjelenito
+    class KonzolosMegjelenito : IAutomatikusanMukodo
     {
         #region Mezők
         private IMegjelenitheto forras;
@@ -23,6 +24,15 @@ namespace OE.Prog2.Jatek.Megjelenites
             this.pozX = pozX;
             this.pozY = pozY;
         }
+
+        #endregion
+
+        #region Tulajdonságok
+        public int MukodesIntervallum
+        {
+            get { return 1; }
+        }
+
         #endregion
 
         #region Metódusok
@@ -52,6 +62,11 @@ namespace OE.Prog2.Jatek.Megjelenites
                     
                 }
             }
+        }
+
+        public void Mukodik()
+        {
+            Megjelenites();
         }
         #endregion
     }

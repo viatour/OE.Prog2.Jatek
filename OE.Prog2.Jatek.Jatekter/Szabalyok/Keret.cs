@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OE.Prog2.Jatek.Jatekter;
 using OE.Prog2.Jatek.Szabalyok;
 using OE.Prog2.Jatek.Megjelenites;
+using OE.Prog2.Jatek.Automatizmus;
 
 namespace OE.Prog2.Jatek.Keret
 {
@@ -17,6 +18,7 @@ namespace OE.Prog2.Jatek.Keret
         private const int KINCSEK_SZAMA = 10;
         private JatekTer valosTer;
         private bool jatekVege = false;
+        private OrajelGenerator generator;
         #endregion
 
         #region Konstruktor
@@ -24,6 +26,7 @@ namespace OE.Prog2.Jatek.Keret
         {
             valosTer = new JatekTer(PALYA_MERET_X, PALYA_MERET_Y);
             PalyaGeneralas();
+            generator = new OrajelGenerator();
         }
         #endregion
 
@@ -73,9 +76,17 @@ namespace OE.Prog2.Jatek.Keret
         }
         public void Futtatas()
         {
-            KonzolosMegjelenito gui = new KonzolosMegjelenito(valosTer, 0, 0);
             Jatekos bela = new Jatekos("Béla", 1, 1, valosTer);
+            KonzolosMegjelenito gui = new KonzolosMegjelenito(valosTer, 0, 0);
             KonzolosMegjelenito gui2 = new KonzolosMegjelenito(bela, 25, 0);
+
+            GepiJatekos kati = new GepiJatekos("Kati", 2, 3, valosTer);
+            GonoszGepiJatekos laci = new GonoszGepiJatekos("Laci", 5, 6, valosTer);
+
+            generator.Felvetel(kati);
+            generator.Felvetel(laci);
+            generator.Felvetel(gui);
+            //generator.Felvetel(gui2);
             //Vezérlés
             do
             {
@@ -101,8 +112,10 @@ namespace OE.Prog2.Jatek.Keret
                         Console.WriteLine("Rossz billentyű!");
                         break;
                 }
-                //gui.Megjelenites();
-                gui2.Megjelenites();
+                gui.Megjelenites();
+                //gui2.Megjelenites();
+                //kati.Mozgas();
+                //laci.Mozgas();
 
             } while (!jatekVege);
         }
